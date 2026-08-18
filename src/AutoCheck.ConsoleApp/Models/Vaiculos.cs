@@ -1,4 +1,6 @@
-﻿namespace AutoCheck.ConsoleApp.Models
+﻿
+
+namespace AutoCheck.ConsoleApp.Models
 {
     public class Veiculo
     {
@@ -14,8 +16,7 @@
             this.Marca = marca;
             this.Modelo = modelo;
             this.Ano = ano;
-            this.Quilometragem = quilometragem;
-            
+            this.Quilometragem = quilometragem;          
         }
 
         public void AdicionarItemVistoria(string nome, string status)
