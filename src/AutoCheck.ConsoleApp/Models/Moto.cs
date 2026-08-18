@@ -6,9 +6,9 @@ namespace AutoCheck.ConsoleApp.Models
     {
         public int Cilindradas {get; set;}
 
-        public Moto(String marca, string modelo, int ano, int quilometragem, int quantidadePortas) : base(marca, modelo, ano, quilometragem)
+        public Moto(String marca, string modelo, int ano, int quilometragem, int cilindradas) : base(marca, modelo, ano, quilometragem)
         {
-            this.Clilindradas = cilindradas;
+            this.Cilindradas = cilindradas;
         }
         public override List<string> ObterChechlistObrigatorio()
         {
