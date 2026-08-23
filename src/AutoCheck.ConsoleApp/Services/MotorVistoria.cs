@@ -13,7 +13,7 @@ namespace AutoCheck.ConsoleApp.Services
 
         public double PercentualAprovacao {get; private set;}
 
-        public double ClassificacaoFinal {get; private set;}
+        public string ClassificacaoFinal {get; private set;} = "";
 
         public void Processar(Veiculo veiculo)
         {

@@ -22,7 +22,7 @@ namespace AutoCheck.ConsoleApp
                 Console.WriteLine("2 - Exibir Relatório das Vistorias");
                 Console.WriteLine("3 - Sair\n");
                 Console.WriteLine("Escolha uma das opções: ");
-                opcao = Console.ReadLine();
+                opcao = Console.ReadLine() ?? "0";
 
                 switch (opcao)
                 {
@@ -42,7 +42,7 @@ namespace AutoCheck.ConsoleApp
                         break;
                 }
                 
-            } while (opcao != "0");
+            } while (opcao != "3");
         }
     //Tela inicial para cadastro de veiculo!
     static void RealizarNovaVistoria(List<Veiculo> historico)
@@ -50,41 +50,41 @@ namespace AutoCheck.ConsoleApp
         Console.WriteLine("--- Nova Vistoria ---\n");
         Console.WriteLine("Opção disponiveis\n 1 - Carro\n 2 - Moto \n 3 - Caminhão");
         Console.WriteLine("Informe o tipo de veiculo: ");
-        string tipo = Console.ReadLine();
+        string tipo = Console.ReadLine() ?? "0";
 
         Console.WriteLine("Marca: ");
-        string marca = Console.ReadLine();
+        string marca = Console.ReadLine() ?? ""; // durante os testes, ocorreu erros e na pesquisa, foi sugerido essa "proteção" Coalescência para evitar informação nula 
 
         Console.WriteLine("Modelo: ");
-        string modelo = Console.ReadLine();
+        string modelo = Console.ReadLine() ?? "";
 
         Console.WriteLine("Ano: ");
-        int ano = int.Parse(Console.ReadLine());
+        int ano = int.Parse(Console.ReadLine() ?? "0");
 
         Console.WriteLine("Quilometragem: ");
-        int km = int.Parse(Console.ReadLine());
+        int km = int.Parse(Console.ReadLine() ?? "0");
 
-        Veiculo novoVeiculo = null;
+        Veiculo? novoVeiculo = null; //para evitar reclamações, pesquisei como corrigir e recebi esse retorno!
 
         //Vamos cadastrar os veiculos usando as subclasses Carro, Moto ou Caminhão
         if (tipo == "1")
         {
             Console.WriteLine("Quantidade de portas: ");
-            int portas = int.Parse(Console.ReadLine());
+            int portas = int.Parse(Console.ReadLine() ?? "0");
             novoVeiculo = new Carro(marca, modelo, ano, km, portas);
         }
         else if (tipo == "2")
         {
             Console.WriteLine("Cilindradas: ");
-            int cilindradas = int.Parse(Console.ReadLine());
+            int cilindradas = int.Parse(Console.ReadLine() ?? "0");
             novoVeiculo = new Moto(marca, modelo, ano, km, cilindradas);
         }
         else if (tipo == "3")
         {
             Console.WriteLine("Qunatidade de eixos: ");
-            int eixos = int.Parse(Console.ReadLine());
+            int eixos = int.Parse(Console.ReadLine() ?? "0");
             Console.WriteLine("Capacidade de carga (em toneladas): ");
-            double carga = double.Parse(Console.ReadLine());
+            double carga = double.Parse(Console.ReadLine() ?? "0");
             novoVeiculo = new Caminhao(marca, modelo, ano, km, eixos, carga);
         }
         else
@@ -104,7 +104,7 @@ namespace AutoCheck.ConsoleApp
         {
             Console.WriteLine($"\nItem: {nomeItem}");
             Console.WriteLine("Status (1 - Bom | 2 - Regular | 3 - Ruim): ");
-            string escolha = Console.ReadLine();
+            string escolha = Console.ReadLine() ?? "";
 
             string statusFinal = "Ruim"; //Define ruim por defaul!
             if (escolha == "1") statusFinal = "Bom";
@@ -115,7 +115,7 @@ namespace AutoCheck.ConsoleApp
         //Vamos salvar na lista do sistema oara posterior consulta
         historico.Add(novoVeiculo);
 
-        Console.WriteLine("\n Vistoria concluida e salva com sucesso!")
+        Console.WriteLine("\n Vistoria concluida e salva com sucesso!");
         Console.ReadLine();
     }
 
