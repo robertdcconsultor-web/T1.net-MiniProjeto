@@ -1,6 +1,4 @@
 ﻿//Caminhos necessários de integração!
-using System;
-using System.Collections.Generic;
 using AutoCheck.ConsoleApp.Models;
 using AutoCheck.ConsoleApp.Services;
 
