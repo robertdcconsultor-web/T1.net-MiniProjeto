@@ -1,4 +1,6 @@
 ﻿
+//Correção para ligar as outras listas
+using System.Collections.Generic;
 
 namespace AutoCheck.ConsoleApp.Models
 {
@@ -13,9 +15,11 @@ namespace AutoCheck.ConsoleApp.Models
             this.QuantidadeEixos = quantidadeEixos;
             this.CapacidadeCargaToneladas = capacidadeCargaToneladas;
         }
-        public override List<string> ObterChechlistObrigatorio()
+        //Cooreção: erro de grafia!
+        public override List<string> ObterChecklistObrigatorio()
         {
-            List<string> checklist = new List<string>();
+            //Correção - Puxando os itens do pai!
+            List<string> checklist = base.ObterChecklistObrigatorio();
 
             checklist.Add("Tacógrafo");
             checklist.Add("Sistema de Freios a Ar");

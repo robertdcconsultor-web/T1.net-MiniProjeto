@@ -1,4 +1,6 @@
 ﻿
+//Correção para lisgar as outras listas
+using System.Collections.Generic;
 
 namespace AutoCheck.ConsoleApp.Models
 {
@@ -10,9 +12,11 @@ namespace AutoCheck.ConsoleApp.Models
         {
             this.QuantidadePortas = quantidadePortas;
         }
-        public override List<string> ObterChechlistObrigatorio()
+        //Cooreção: erro de grafia!
+        public override List<string> ObterChecklistObrigatorio()
         {
-            List<string> checklist = new List<string>();
+            //Correção - Puxando os itens do pai!
+            List<string> checklist = base.ObterChecklistObrigatorio();
 
             checklist.Add("Estepe e Macado");
             checklist.Add("Triangulo de Sinalização");

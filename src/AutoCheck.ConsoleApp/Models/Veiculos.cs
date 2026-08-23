@@ -1,4 +1,6 @@
 ﻿
+//Correção para lisgar as outras listas
+using System.Collections.Generic;
 
 namespace AutoCheck.ConsoleApp.Models
 {
@@ -16,7 +18,10 @@ namespace AutoCheck.ConsoleApp.Models
             this.Marca = marca;
             this.Modelo = modelo;
             this.Ano = ano;
-            this.Quilometragem = quilometragem;          
+            this.Quilometragem = quilometragem;       
+            //Faltava o new List para ligar as outras listas!
+            this.VistoriaRealizada = new 
+            List<ItemVistoria>();
         }
 
         public void AdicionarItemVistoria(string nome, string status)

@@ -1,5 +1,6 @@
 ﻿
-
+using System;
+using System.Collections.Generic;
 using AutoCheck.ConsoleApp.Models;
 
 namespace AutoCheck.ConsoleApp.Services
@@ -28,7 +29,7 @@ namespace AutoCheck.ConsoleApp.Services
             if (this.PontuacaoMaxima > 0)
             {
                 //Atende a somatória solicita
-                this.PercentualAprovacao = this.PontuacaoObtida / this.PontuacaoMaxima) *100;             
+                this.PercentualAprovacao = ((double)this.PontuacaoObtida / this.PontuacaoMaxima) *100;             
             }
             else
             {
