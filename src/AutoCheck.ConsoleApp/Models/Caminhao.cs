@@ -1,7 +1,4 @@
 ﻿
-//Correção para ligar as outras listas
-using System.Collections.Generic;
-
 namespace AutoCheck.ConsoleApp.Models
 {
     public class Caminhao : Veiculo

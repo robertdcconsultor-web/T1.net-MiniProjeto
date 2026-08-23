@@ -1,6 +1,4 @@
 ﻿
-using System;
-using System.Collections.Generic;
 using AutoCheck.ConsoleApp.Models;
 
 namespace AutoCheck.ConsoleApp.Services
