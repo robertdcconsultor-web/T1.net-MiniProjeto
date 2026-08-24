@@ -24,4 +24,4 @@ Para evitar o uso de LINQ (conforme o requisito de aprendizado), toda a varredur
 Neste mini-projeto local, simulamos o conceito de cliente-servidor através da separação de responsabilidades. O `Program.cs` atua como o "Cliente" (Interface/Visão), coletando os dados do usuário, enquanto o `MotorVistoria.cs` atua como a lógica de "Servidor/Back-End", processando os dados e retornando o resultado processado sem se preocupar em como isso será exibido.
 
 ## Apresentação
-🎥 [Link para o vídeo de demonstração no Drive](https://drive.google.com/file/d/1H228-KgvSCYJpr6OzL_Z-wiLVeLVwn80/view)
+🎥 [Link para o vídeo de demonstração no Drive](https://drive.google.com/file/d/1w42JYCzHFo6eLUiYwm3O1FqHBiezVmra/view)
